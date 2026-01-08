@@ -1,0 +1,2 @@
+"Este es un nuevo registro"
+"El texto se agrega al final del archivo sin borrar lo anterior"

@@ -1,0 +1,25 @@
+1. Inicio
+
+2. Buscar un lugar cómodo
+
+3. Eliminar las distracciones
+
+4. Empezar a estudiar:
+   1. Leer
+   2. Practicar
+   3. Si tiene dudas:
+      1. Preguntar a una persona con mayor conocimiento en el tema
+      2. Repasar 
+      3. Practicar
+
+5. Si ya entendió la materia:
+   1. Tomar un descanso
+   2. Repasar
+   3. Realizar el examen
+
+6. Sino:
+   1. Volver al paso 4
+
+7. Fin
+
+
