@@ -1,0 +1,2 @@
+hola
+Cree un programa que abra un archivo de texto y cuente cuántas palabras contiene en total.
