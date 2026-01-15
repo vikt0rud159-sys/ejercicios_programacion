@@ -1,0 +1,6 @@
+print("Hola")
+print("Mi nombre es Victor")
+print("Estoy aprendiendo Python")
+print(1+1)
+print(20-10)
+print(10*2)

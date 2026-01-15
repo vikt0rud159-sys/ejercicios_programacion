@@ -1,0 +1,33 @@
+1.  Inicio
+
+2.  Definir contador
+3.  Definir sexo
+4.  Definir sexo_1
+5.  Definir sexo_2
+
+
+6.  contador = 1
+7.  sexo_1 = 0
+8.  sexo_2 = 0
+
+9.  Mientras (contador <= 6) hacer:
+        1. Mostrar "Ingrese el sexo (1 = mujer) (2 = hombre):"
+        2. Mostrar contador
+        3. Pedir sexo
+        4. Si (sexo = 1) hacer:
+               1. sexo_1 = sexo_1 + 1
+               2. contador = contador + 1
+        5. Sino, (sexo = 2) hacer:
+               1. sexo_2 = sexo_2 + 1
+               2. contador = contador + 1
+10. FinMientras
+
+11. sexo_1 = (sexo_1 / 6) * 100
+12. sexo_2 = (sexo_2 / 6) * 100
+
+13. Mostrar "Mujeres %"
+14. Mostrar sexo_1
+15. Mostrar "Hombres %"
+16. Mostrar sexo_2
+
+17. Fin

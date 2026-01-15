@@ -1,0 +1,20 @@
+1. Inicio
+
+2. Si tiene computadora:
+   1. Encender la computadora
+   2. Iniciar el navegador
+   3. Ingresar a Youtube.com
+
+3. Sino, si tiene smartphone, o si tiene tablet, o si tiene smart TV:
+   1. Encender el dispositivo
+   2. Ingresar a la app de YouTube.com
+
+4. Sino:
+   1. Busque a alguien que si tenga alguno de los anteriores y pídaselo prestado
+   2. Ingresar a la app de YouTube.com
+
+5. Buscar un video
+
+6. Reproducirlo
+
+7. Fin

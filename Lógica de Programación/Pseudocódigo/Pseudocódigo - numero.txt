@@ -1,0 +1,22 @@
+1.  Inicio
+
+2.  Definir numero
+3.  Definir contador
+4.  Definir numero_final
+
+5.  contador = 0
+6.  numero_final = 0
+
+7.  Mostrar "Ingrese un numero:"
+8.  Pedir numero
+9.  numero // 1 = numero
+
+10. Mientras que (contador < numero) hacer:
+        1. contador = contador + 1
+        2. numero_final = contador + numero_final
+11. FinMientras
+
+12. Mostrar "El resultado es:"
+13. Mostrar numero_final
+
+14. Fin

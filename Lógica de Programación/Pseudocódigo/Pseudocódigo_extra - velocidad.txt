@@ -1,0 +1,13 @@
+1.  Inicio
+
+2.  Definir velocidad
+
+3.  Mostrar "Ingrese velocidad km/h:"
+4.  Pedir velocidad
+
+5.  velocidad = velocidad / 3.6
+
+6.  Mostrar "Velocidad m/s:"
+7.  Mostrar velocidad
+
+8.  Fin
