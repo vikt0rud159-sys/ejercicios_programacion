@@ -1,4 +1,15 @@
-Ejercicios Git (Subir archivos de Lyfter a GitHub)
-delete (Eliminar los archivos subidos anteriormente debido a un error al subirlos)
-first commit (Subir Ejercicio de Lyfter (Tu primer push a GitHub))
-Ejercicios Git (Subir archivos de Lyfter a GitHub)
+Ejercicios Git(Jan 8, 2026, 9:11 AM CST)
+-Se agregaron carpetas y archivos de IT Essentials, Lógica de Programación, Python Básico
+-Para subir ejercicios anteriores
+
+delete(Jan 8, 2026, 9:11 AM CST)
+-Se eliminó un lote grande de archivos para limpiar el repo
+-Debido a un error al subir los archivos
+
+first commit(Jan 8, 2026, 9:12 AM CST)
+-Se agrego el archivo README.md
+-Archivo de prueba
+
+Ejercicios Git(Jan 8, 2026, 9:51 AM CST)
+-Se agregaron carpetas y archivos de IT Essentials, Lógica de Programación, Python Básico
+-Para organizar, facilitar el acceso a los ejercicios de Lyfter
