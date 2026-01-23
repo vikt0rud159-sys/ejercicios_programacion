@@ -102,29 +102,39 @@ def get_student_info(students_data):
 
 
 def get_higher_average(students_data):
-    student_higher = [0,0,0]
-    higher = [0.0,0.0,0.0]
+    student_higher = []
+    higher = []
     try:
-        if len(students_data) > 0:
-            higher = [students_data[0]["Average"],0,0]
-        for student in students_data:
-            if float(student["Average"]) >= float(higher[0]):
-                higher.insert(0, student["Average"])
-                student_higher.insert(0, student["Name"])
-            elif float(student["Average"]) > float(higher[1]):
-                higher.insert(1, student["Average"])
-                student_higher.insert(1, student["Name"])
-            elif float(student["Average"]) > float(higher[2]):
-                higher.insert(2, student["Average"])
-                student_higher.insert(2, student["Name"])
-        if len(students_data) > 2:
-            print(f"Nombre: {student_higher[0]}     Promedio: {higher[0]}\nNombre: {student_higher[1]}     Promedio: {higher[1]}\nNombre: {student_higher[2]}     Promedio: {higher[2]}\n")
-        elif len(students_data) > 1:
-            print(f"Nombre: {student_higher[0]}     Promedio: {higher[0]}\nNombre: {student_higher[1]}     Promedio: {higher[1]}\n")
-        else:
-            print(f"Nombre: {student_higher[0]}     Promedio: {higher[0]}\n")
+        for student in range(len(students_data)):
+            if len(student_higher) == 0:
+        # if len(students_data) > 0:
+        # for student in students_data:
+                student_higher = [students_data[0]["Name"]]
+                higher = [students_data[0]["Average"]]
+            elif float(students_data[student]["Average"]) >= float(higher[0]):
+                student_higher.insert(0, students_data[student]["Name"])
+                higher.insert(0, students_data[student]["Average"])
+            elif len(student_higher) == 1:
+                student_higher.append(students_data[student]["Name"])
+                higher.append(students_data[student]["Average"])
+            elif float(students_data[student]["Average"]) >= float(higher[1]):
+                student_higher.insert(1, students_data[student]["Name"])
+                higher.insert(1, students_data[student]["Average"])
+            elif len(student_higher) == 2:
+                student_higher.append(students_data[student]["Name"])
+                higher.append(students_data[student]["Average"])
+            elif len(student_higher) <= 3:
+                if float(students_data[student]["Average"]) >= float(higher[2]):
+                    student_higher.insert(2, students_data[student]["Name"])
+                    higher.insert(2, students_data[student]["Average"])
+        for top in range(len(student_higher)):
+            if top == 3:
+                return
+            print(f"[Nombre: {student_higher[top]}]       [Promedio: {higher[top]}]")
+        print()
     except Exception as ex:
         print(f"Error: {ex}\n")
+        return print()
 
 
 def get_general_average(students_data):
@@ -151,7 +161,7 @@ def del_student(students_data):
                 confirm = input(f"Confirmación requerida (Presione [S])    ")
                 if confirm.lower() == "s":
                     students_data.remove(students_data[index])
-                    print(f"[Nombre: {students_data[index]["Name"]}][Sección: {students_data[index]["Section"]}] Eliminado con éxito.\n")
+                    print(f"[Nombre: {del_name}][Sección: {del_sec}] Eliminado con éxito.\n")
                 else:
                     print("¡Eliminación de estudiante cancelada!\n")
                     return
@@ -167,7 +177,7 @@ def students_who_failed(students_data):
     who_failed = []
     try:
         for student in range(len(students_data)):
-            if float(students_data[student]["Spanish"]) < 60 or float(students_data[student]["English"]) < 60 or float(students_data[student]["Social Studies"]) < 60 or float(students_data[student]["Science"] < 60):
+            if float(students_data[student]["English"]) < 60 or float(students_data[student]["Spanish"]) < 60 or float(students_data[student]["Social Studies"]) < 60 or  float(students_data[student]["Science"]) < 60:
                 new_who_failed = {
                     "Name": students_data[student]["Name"],
                     "Section": students_data[student]["Section"],
