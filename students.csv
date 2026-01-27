@@ -1,6 +1,5 @@
-Name,Section,Spanish,English,Social Studies,Science,Average
-Jean Carlo,10A,99.0,100.0,100.0,100.0,99.75
-Hilla,15A,90.0,60.0,80.0,20.0,62.5
-Monse,16A,80.0,20.0,30.0,60.0,47.5
-Nimrod,15A,59.0,60.0,20.0,10.0,42.5
-Carlo,10A,99.0,100.0,100.0,100.0,99.75
+name,section,spanish,english,social_studies,science,average
+A,1A,100.0,90.0,80.0,70.0,85.0
+B,2B,60.0,50.0,40.0,30.0,45.0
+C,3C,20.0,10.0,0.0,100.0,32.5
+D,4D,100.0,100.0,100.0,100.0,100.0
