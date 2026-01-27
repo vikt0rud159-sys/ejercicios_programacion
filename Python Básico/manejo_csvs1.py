@@ -1,40 +1,31 @@
 import csv
 
 
-video_games_list = [
+countries_list = [
 	{
-		"Nombre": "Grand Theft Auto IV",
-		"Género": "Accion",
-		"Desarrollador": "Rockstar Games",
-		"Clasificación ESRB": "M",
+		'name': 'Costa Rica',
+		'capital': 'San José',
+		'currency': 'Colón',
+		'area_km2': '51,100',
 	},
 	{
-		"Nombre": "The Elder Scrolls IV",
-		"Género": "RPG",
-		"Desarrollador": "Bethesda",
-		"Clasificación ESRB": "M",
+		'name': 'Colombia',
+		'capital': 'Bogotá',
+		'currency': 'Peso Colombiano',
+		'area_km2': '1,141,748',
 	},
 	{
-		"Nombre": "Tony Hawk's Pro Skater 2",
-		"Género": "Deportes",
-		"Desarrollador": "Activision",
-		"Clasificación ESRB": "T",
+		'name': 'México',
+		'capital': 'Ciudad de México',
+		'currency': 'Peso Mexicano',
+		'area_km2': '1,972,550',
 	},
 ]
 
-
-video_games_headers = (
-	"Nombre",
-	"Género",
-	"Desarrollador",
-	"Clasificación ESRB",
-)
-
-
 def write_csv_file(file_path, data, headers):
-    with open(file_path, "w", encoding="utf-8", newline="") as file:
-        writer = csv.DictWriter(file, headers)
-        writer.writeheader()
-        writer.writerows(data)
+	with open(file_path, 'w', encoding='utf-8') as file:
+		writer = csv.DictWriter(file, headers)
+		writer.writeheader()
+		writer.writerows(data)
 
-write_csv_file("videojuegos.csv", video_games_list, video_games_headers)
+write_csv_file('countries.csv', countries_list, countries_list[0].keys())
