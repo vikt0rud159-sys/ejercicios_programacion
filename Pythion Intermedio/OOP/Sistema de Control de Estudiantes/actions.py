@@ -1,6 +1,6 @@
 class StudentInfo:
     def __init__(self, students_data, imported, main_student):
-        main_studemt=0
+        main_studemt = 0
         try:
             if len(imported) > 0:
                 self.name = imported[main_student]["name"]

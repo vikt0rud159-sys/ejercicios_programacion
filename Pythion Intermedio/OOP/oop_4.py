@@ -31,13 +31,15 @@ class Feet:
 		self.toes = toes       
 
 
-head = Head(2)
-right_hand = Hand(5)
-right_arm = Arm(right_hand)
-left_hand = Hand(5)
-left_arm = Arm(left_hand)
-right_feet = Feet(5)
-right_leg = Leg(right_feet)
-left_feet = Feet(5)
-left_leg = Leg(left_feet)
-torso = Torso(head, right_arm, left_hand, right_leg, left_leg)
+class Human:
+	def __init__(self):
+		self.head = Head(2)
+		self.right_hand = Hand(5)
+		self.right_arm = Arm(self.right_hand)
+		self.left_hand = Hand(5)
+		self.left_arm = Arm(self.left_hand)
+		self.right_feet = Feet(5)
+		self.right_leg = Leg(self.right_feet)
+		self.left_feet = Feet(5)
+		self.left_leg = Leg(self.left_feet)
+		self.torso = Torso(self.head, self.right_arm, self.left_hand, self.right_leg, self.left_leg)
