@@ -1,13 +1,4 @@
 class BankAccount:
-	def __init__(self):
-		while True:
-			try:
-				self.min_balance = float(input("Ingrese saldo mínimo: "))
-				self.balance = 0.0
-				return
-			except ValueError:
-				print("   ¡Debe ser un numero!\n")
-	
 	def substract_balance(self):
 		while True:
 			try:
@@ -33,6 +24,15 @@ class BankAccount:
 				print("   ¡Debe ser un numero (Positivo)!\n")
 
 class SavingsAccount(BankAccount):
+	def __init__(self):
+		while True:
+			try:
+				self.min_balance = float(input("Ingrese saldo mínimo: "))
+				self.balance = 0.0
+				return
+			except ValueError:
+				print("   ¡Debe ser un numero!\n")
+
 	def check_min_balance(self):
 		if (self.balance - self.amount) < self.min_balance:
 			print("   ¡Saldo insuficiente!\n")
