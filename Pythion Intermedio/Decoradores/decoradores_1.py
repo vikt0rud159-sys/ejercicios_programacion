@@ -1,13 +1,10 @@
 def print_parameters_and_return(func):
-    def wrapper(num1, num2):
-        print(f"Parámetros: {num1}, {num2}")
-        result = func(num1, num2)
-        print(f"Retorno: {result}\n")
-        return result
+    def wrapper(*args, **kwargs):
+        print(f"Parámetros: {args, kwargs} Retorno: {func(*args, **kwargs)}\n")
     return wrapper
 
 @print_parameters_and_return
-def sum_numbers(num1, num2):
-    return num1 + num2
+def save_info(*args, **kwads):
+    return "save_info retorn"
 
-sum_numbers(3, 5)
+save_info(3, 5, m="M")
