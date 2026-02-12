@@ -6,16 +6,16 @@ class Node:
 class Queue:
     def __init__(self, head=None):
         self.head = head
+        self.tail = head
 
     def enqueue(self, data):
         new_node = Node(data)
         if self.head is None:
             self.head = new_node
+            self.tail = new_node
         else:
-            current_node = self.head
-            while current_node.next_node is not None:
-                current_node = current_node.next_node
-            current_node.next_node = new_node
+            self.tail.next_node = new_node
+            self.tail = new_node
 
     def dequeue(self):
         if self.head is None:
@@ -23,6 +23,8 @@ class Queue:
         else:
             removed_node = self.head
             self.head = self.head.next_node
+            if self.head is None:
+                self.tail = None
             return removed_node.data
 
     def print_all(self):

@@ -3,7 +3,6 @@ class Node:
         self.data = data
         self.next = next
 
-
 class DoubleEndedQueue:
     def __init__(self, head):
         self.head = head
@@ -20,19 +19,30 @@ class DoubleEndedQueue:
         self.head = new_node
 
     def push_right(self, new_node):
-        self.tail.next = new_node
-        self.tail = new_node
+        if self.tail is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
 
     def pop_left(self):
-        if self.head:
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+        elif self.head is not None:
             self.head = self.head.next
 
     def pop_right(self):
-        current_node = self.head
-        while current_node.next is not self.tail:
-            current_node = current_node.next
-        current_node.next = None
-        self.tail = current_node
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+        elif self.head is not None:
+            current_node = self.head
+            while current_node.next is not self.tail:
+                current_node = current_node.next
+            current_node.next = None
+            self.tail = current_node
 
 
 first_node = Node("A")
@@ -41,6 +51,7 @@ second_node = Node("B")
 my_dequeue.push_right(second_node)
 third_node = Node("C")
 my_dequeue.push_left(third_node)
+
 my_dequeue.print_structure()
 print("\n[POP LEFT]")
 my_dequeue.pop_left()

@@ -35,10 +35,16 @@ class DoublyLinkedList:
             if current_node.data == data:
                 if current_node == self.head:
                     self.head = current_node.next_node
-                    self.head.prev_node = None
+                    if self.head is not None:
+                        self.head.prev_node = None
+                    else:
+                        self.tail = None
                 elif current_node == self.tail:
                     self.tail = current_node.prev_node
-                    self.tail.next_node = None
+                    if self.tail is not None:
+                        self.tail.next_node = None
+                    else:
+                        self.head = None
                 else:
                     current_node.prev_node.next_node = current_node.next_node
                     current_node.next_node.prev_node = current_node.prev_node
@@ -68,7 +74,7 @@ print("(print_forward):")
 dll.print_forward()
 print("(print_backward):")
 dll.print_backward()
-dll.prepend("X")
+
 print("(print_forward)(prepend)(X):")
 dll.print_forward()
 print("(print_backward)(prepend):")
