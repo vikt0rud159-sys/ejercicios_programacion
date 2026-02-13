@@ -1,9 +1,12 @@
 def validation(func):
     def wrapper(list):
+        if len(list) == 0:
+            print(f"{list} Error: Lista vacío\n")
+            return
         for num in list:
             if not isinstance(num, int):
                 print(f"{list} Error: La lista contiene elementos no numéricos\n")
-                exit()
+                return
         func(list)
     return wrapper
 
@@ -28,3 +31,6 @@ bubble_sort(list_num)
 
 list_num2 = [39, 40, "W"]
 bubble_sort(list_num2)
+
+list_num3 = []
+bubble_sort(list_num3)
