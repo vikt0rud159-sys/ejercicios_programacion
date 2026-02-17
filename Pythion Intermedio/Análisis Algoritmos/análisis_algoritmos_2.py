@@ -14,7 +14,7 @@ def check_if_lists_have_an_equal(list_a, list_b):
 
 def print_10_or_less_elements(list_to_print): 
 	list_len = len(list_to_print) # O(1)
-	for index in range(min(list_len, 10)): # O(n)
+	for index in range(min(list_len, 10)): # O(1)
 		print(list_to_print[index]) # O(1)
 
 
@@ -30,7 +30,7 @@ def generate_list_trios(list_a, list_b, list_c):
 
 print_numbers_times_2() # O(n)
 check_if_lists_have_an_equal() # O(n^2)
-print_10_or_less_elements() # O(n)
+print_10_or_less_elements() # O(1)
 generate_list_trios() #O(n^3)
 
 # max = O(n^3)
