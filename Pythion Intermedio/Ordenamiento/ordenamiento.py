@@ -6,6 +6,7 @@ def bubble_sort(list):
                 next = list[index+1]
                 list[index+1] = current
                 list[index] = next
+    return list
 
 
 list_1=[4,3,2,1]
