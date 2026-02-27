@@ -1,4 +1,4 @@
-from logica import ApplicationLogic
+from logic import ApplicationLogic
 
 
 def test_get_category_color_from_dict():
