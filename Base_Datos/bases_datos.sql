@@ -23,8 +23,7 @@ CREATE TABLE `Products`(
 );
 CREATE TABLE `Shopping Cart`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Buyer email` VARCHAR(255) NOT NULL,
-    `Products` BIGINT NOT NULL
+    `Buyer email` VARCHAR(255) NOT NULL
 );
 CREATE TABLE `Shopping Cart Products`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -32,14 +31,12 @@ CREATE TABLE `Shopping Cart Products`(
     `Product ID` BIGINT NOT NULL
 );
 ALTER TABLE
-    `Products` ADD CONSTRAINT `products_id_foreign` FOREIGN KEY(`id`) REFERENCES `Shopping Cart`(`Products`);
-ALTER TABLE
     `Invoices` ADD CONSTRAINT `invoices_id_foreign` FOREIGN KEY(`id`) REFERENCES `Products Per Invoice`(`Invoice ID`);
+ALTER TABLE
+    `Shopping Cart Products` ADD CONSTRAINT `shopping cart products_product id_foreign` FOREIGN KEY(`Product ID`) REFERENCES `Products`(`id`);
 ALTER TABLE
     `Invoices` ADD CONSTRAINT `invoices_buyer email_foreign` FOREIGN KEY(`Buyer email`) REFERENCES `Shopping Cart`(`id`);
 ALTER TABLE
     `Shopping Cart Products` ADD CONSTRAINT `shopping cart products_shopping cart id_foreign` FOREIGN KEY(`Shopping Cart ID`) REFERENCES `Shopping Cart`(`id`);
-ALTER TABLE
-    `Products` ADD CONSTRAINT `products_id_foreign` FOREIGN KEY(`id`) REFERENCES `Shopping Cart Products`(`Product ID`);
 ALTER TABLE
     `Products` ADD CONSTRAINT `products_id_foreign` FOREIGN KEY(`id`) REFERENCES `Products Per Invoice`(`Product ID`);
