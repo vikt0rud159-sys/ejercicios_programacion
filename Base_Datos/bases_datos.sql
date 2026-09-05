@@ -1,8 +1,9 @@
 CREATE TABLE `Invoices`(
     `id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `User ID` BIGINT NOT NULL,
+    `Payment Method ID` BIGINT NOT NULL,
     `Invoice Number` BIGINT NOT NULL,
     `Purchase date` DATETIME NOT NULL,
-    `Buyer email` VARCHAR(255) NOT NULL,
     `Total amount` DECIMAL(8, 2) NOT NULL
 );
 CREATE TABLE `Products Per Invoice`(
@@ -23,20 +24,44 @@ CREATE TABLE `Products`(
 );
 CREATE TABLE `Shopping Cart`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Buyer email` VARCHAR(255) NOT NULL
-);
-CREATE TABLE `Shopping Cart Products`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `Shopping Cart ID` BIGINT NOT NULL,
-    `Product ID` BIGINT NOT NULL
+    `Product code` BIGINT NOT NULL
 );
+CREATE TABLE `User`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Full name` VARCHAR(255) NOT NULL,
+    `Email` VARCHAR(255) NOT NULL,
+    `Registration date` DATETIME NOT NULL
+);
+ALTER TABLE
+    `User` ADD UNIQUE `user_email_unique`(`Email`);
+CREATE TABLE `Reviews`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `User ID` BIGINT NOT NULL,
+    `Review ID` BIGINT NOT NULL,
+    `Product code` BIGINT NOT NULL,
+    `Comment` VARCHAR(255) NOT NULL,
+    `Rating (1 al 5)` BIGINT NOT NULL,
+    `Date` DATETIME NOT NULL
+);
+CREATE TABLE `Payment Methods`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Method type` VARCHAR(255) NOT NULL,
+    `Bank name` VARCHAR(255) NOT NULL
+);
+ALTER TABLE
+    `Invoices` ADD CONSTRAINT `invoices_payment method id_foreign` FOREIGN KEY(`Payment Method ID`) REFERENCES `Payment Methods`(`id`);
 ALTER TABLE
     `Invoices` ADD CONSTRAINT `invoices_id_foreign` FOREIGN KEY(`id`) REFERENCES `Products Per Invoice`(`Invoice ID`);
 ALTER TABLE
-    `Shopping Cart Products` ADD CONSTRAINT `shopping cart products_product id_foreign` FOREIGN KEY(`Product ID`) REFERENCES `Products`(`id`);
+    `Shopping Cart` ADD CONSTRAINT `shopping cart_product code_foreign` FOREIGN KEY(`Product code`) REFERENCES `Products`(`id`);
 ALTER TABLE
-    `Invoices` ADD CONSTRAINT `invoices_buyer email_foreign` FOREIGN KEY(`Buyer email`) REFERENCES `Shopping Cart`(`id`);
+    `Shopping Cart` ADD CONSTRAINT `shopping cart_shopping cart id_foreign` FOREIGN KEY(`Shopping Cart ID`) REFERENCES `User`(`id`);
 ALTER TABLE
-    `Shopping Cart Products` ADD CONSTRAINT `shopping cart products_shopping cart id_foreign` FOREIGN KEY(`Shopping Cart ID`) REFERENCES `Shopping Cart`(`id`);
+    `Reviews` ADD CONSTRAINT `reviews_product code_foreign` FOREIGN KEY(`Product code`) REFERENCES `Products`(`id`);
+ALTER TABLE
+    `Reviews` ADD CONSTRAINT `reviews_user id_foreign` FOREIGN KEY(`User ID`) REFERENCES `User`(`id`);
 ALTER TABLE
     `Products` ADD CONSTRAINT `products_id_foreign` FOREIGN KEY(`id`) REFERENCES `Products Per Invoice`(`Product ID`);
+ALTER TABLE
+    `Invoices` ADD CONSTRAINT `invoices_user id_foreign` FOREIGN KEY(`User ID`) REFERENCES `User`(`id`);
