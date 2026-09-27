@@ -1,25 +1,26 @@
 SELECT *
-    FROM "Products";
+FROM products;
 
 SELECT *
-    FROM "Products"
-    WHERE "Price" > 50000;
+FROM products
+WHERE price > 50000;
 
-SELECT "Product ID", COUNT(id)
-    FROM "Products Per Invoice";
+SELECT product_id, COUNT(id) AS total_compras
+FROM products_per_invoice
+GROUP BY product_id;
 
-SELECT "Product ID", SUM("Total amount") AS TotalPurchased, COUNT(id) AS TotalPurchases
-FROM "Products Per Invoice"
-GROUP BY "Product ID";
-
-SELECT *
-    FROM "Invoices"
-    GROUP BY "User ID";
+SELECT product_id, SUM(total_amount) AS total_purchased, COUNT(id) AS total_purchases
+FROM products_per_invoice
+GROUP BY product_id;
 
 SELECT *
-    FROM "Invoices"
-    GROUP BY "Total amount" DESC;
+FROM invoices
+WHERE user_id = 1;
 
 SELECT *
-    FROM "Invoices"
-    WHERE "id" = 1;
+FROM invoices
+ORDER BY total_amount DESC;
+
+SELECT *
+FROM invoices
+WHERE id = 1;
