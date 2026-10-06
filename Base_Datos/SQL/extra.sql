@@ -1,4 +1,4 @@
--- 1. Crear categorías y ajustar productos
+-- 1. Crear categorías y ajustar productos.
 CREATE TABLE "categories"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "name" TEXT UNIQUE NOT NULL,
@@ -23,7 +23,7 @@ UPDATE "products"
 
 SELECT * FROM products
 
--- 2. Carga de productos y filtros básicos
+-- 2. Carga de productos y filtros básicos.
 INSERT INTO "products" ("code", "name", "price", "entry_date", "brand", "stock_available", "category_id")
 VALUES (1003, 'Camiseta', 20000, '2026-09-01', 'Nike', 50, 2);
 
@@ -66,7 +66,7 @@ SELECT * FROM products
 ORDER BY price DESC LIMIT 5
 
 
--- 3. Correcciones de datos en productos
+-- 3. Correcciones de datos en productos.
 UPDATE "products"
     SET "stock_available" = 0
     WHERE "price" <= 0;
